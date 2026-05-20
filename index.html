@@ -181,21 +181,21 @@
 
         /* Section Styles */
         section { padding: 5rem 5%; }
-        .section-title { text-align: center; font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; color: var(--forest-green); }
-        .section-subtitle { text-align: center; color: var(--text-light); font-size: 1.1rem; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .section-title { text-align: center; font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; }
+        .section-subtitle { text-align: center; font-size: 1.1rem; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto; }
 
         .about { background: var(--cream); text-align: center; }
 
-        .about-placeholder {
-            background: var(--soft-white);
-            border: 3px dashed var(--beige);
-            border-radius: 20px;
-            padding: 4rem 2rem;
-            max-width: 600px;
-            margin: 0 auto;
+        /* Products - Now dark green like Contact */
+        .products {
+            background: linear-gradient(135deg, var(--forest-green), var(--deep-green));
+            color: var(--soft-white);
         }
 
-        .products { background: var(--soft-white); }
+        .products .section-title,
+        .products .section-subtitle {
+            color: var(--soft-white);
+        }
 
         .products-grid {
             display: grid;
@@ -207,6 +207,7 @@
 
         .product-card {
             background: var(--soft-white);
+            color: var(--text-dark);
             border-radius: 20px;
             padding: 2.5rem 2rem;
             text-align: center;
@@ -216,7 +217,7 @@
 
         .product-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(45, 74, 62, 0.15);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
         }
 
         .product-icon {
@@ -250,7 +251,7 @@
 
         .contact .section-title,
         .contact .section-subtitle {
-            color: #FFFEF9 !important;   /* Bright white */
+            color: #FFFEF9 !important;
             text-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
 
@@ -267,11 +268,6 @@
             color: var(--text-dark);
             border-radius: 20px;
             padding: 2.5rem;
-        }
-
-        .contact-info h3 {
-            color: var(--forest-green);
-            margin-bottom: 1.5rem;
         }
 
         .contact-item {
@@ -405,7 +401,7 @@
         </div>
     </section>
 
-    <!-- Products Section -->
+    <!-- Products Section - Dark Green Background -->
     <section class="products" id="products">
         <h2 class="section-title">Our Products & Services</h2>
         <p class="section-subtitle">Fresh from our farm to your table</p>
