@@ -19,22 +19,16 @@
             --beige: #E8E0D0;
             --soft-white: #FFFEF9;
             --accent-gold: #C9A962;
-            --text-dark: #2C2C2C;
-            --text-light: #6B6B6B;
         }
-
-        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Lato', sans-serif;
             background-color: var(--soft-white);
-            color: var(--text-dark);
+            color: #2C2C2C;
             line-height: 1.6;
         }
 
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-        }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--forest-green); }
 
         /* Navigation */
         nav {
@@ -46,22 +40,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
         }
-
-        nav.scrolled { padding: 0.75rem 5%; box-shadow: 0 4px 30px rgba(0, 0, 0, 0.12); }
+        nav.scrolled { padding: 0.75rem 5%; box-shadow: 0 4px 30px rgba(0,0,0,0.12); }
 
         .nav-logo { font-size: 1.5rem; font-weight: 700; color: var(--forest-green); text-decoration: none; }
-
         .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-        .nav-links a {
-            color: var(--text-dark);
-            font-weight: 500;
-            text-decoration: none;
-            position: relative;
-        }
+        .nav-links a { color: #2C2C2C; text-decoration: none; font-weight: 500; position: relative; }
         .nav-links a:hover { color: var(--warm-brown); }
-
         .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.5rem; color: var(--forest-green); cursor: pointer; }
 
         /* Hero */
@@ -78,40 +64,71 @@
             justify-content: center;
             text-align: center;
         }
-
         .hero-overlay {
             position: absolute; inset: 0;
             background: linear-gradient(135deg, rgba(45,74,62,0.75), rgba(26,47,38,0.65), rgba(92,74,50,0.55));
         }
-
         .hero-content { position: relative; z-index: 1; color: white; padding: 2rem; max-width: 900px; }
-        .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 700; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+        .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 700; text-shadow: 0 3px 12px rgba(0,0,0,0.5); }
         .hero .tagline { font-size: clamp(1.2rem, 2.5vw, 1.8rem); margin: 1rem 0 2rem; color: var(--cream); }
 
         .hero-cta {
+            display: inline-block;
             padding: 1rem 2.5rem;
             background: var(--warm-brown);
             color: white;
-            border-radius: 50px;
             text-decoration: none;
+            border-radius: 50px;
             font-weight: 500;
         }
 
         section { padding: 5rem 5%; }
-        .section-title { text-align: center; font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; color: var(--forest-green); }
-        .section-subtitle { text-align: center; color: var(--text-light); font-size: 1.1rem; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .section-title { text-align: center; font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; }
+        .section-subtitle { text-align: center; color: #6B6B6B; font-size: 1.1rem; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto; }
 
-        /* Contact - FIXED COLORS */
+        /* About & Products */
+        .about { background: var(--cream); text-align: center; }
+        .about-placeholder {
+            background: var(--soft-white);
+            border: 3px dashed var(--beige);
+            border-radius: 20px;
+            padding: 4rem 2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .products { background: var(--soft-white); }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            border: 1px solid var(--beige);
+            transition: all 0.4s;
+        }
+        .product-card:hover { transform: translateY(-8px); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
+
+        /* Contact - Fixed readability */
         .contact {
             background: linear-gradient(135deg, var(--forest-green), var(--deep-green));
             color: white;
         }
-
         .contact .section-title,
-        .contact .section-subtitle,
-        .contact-info h3,
-        .contact-item h4 {
-            color: white !important;
+        .contact .section-subtitle { color: white; }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
         .contact-info {
@@ -129,35 +146,28 @@
         }
 
         .contact-item a {
-            color: #f0e9d8 !important;
+            color: #f5f0e0 !important;
             text-decoration: none;
-            font-weight: 500;
         }
-
-        .contact-item a:hover {
-            color: var(--accent-gold) !important;
-        }
+        .contact-item a:hover { color: var(--accent-gold) !important; }
 
         .signup-form {
             background: var(--soft-white);
             border-radius: 20px;
             padding: 2.5rem;
-            color: var(--text-dark);
+            color: #2C2C2C;
         }
-
         .signup-form input {
             width: 100%;
             padding: 1rem 1.25rem;
             border: 2px solid var(--beige);
             border-radius: 10px;
             margin-bottom: 1rem;
-            background: var(--cream);
         }
-
         .signup-form button {
             width: 100%;
             padding: 1rem 2rem;
-            background: linear-gradient(135deg, var(--forest-green), var(--deep-green));
+            background: var(--forest-green);
             color: white;
             border: none;
             border-radius: 10px;
@@ -172,14 +182,12 @@
             padding: 3rem 5% 2rem;
             text-align: center;
         }
-
         .social-links {
             display: flex;
             justify-content: center;
             gap: 1.5rem;
             margin: 1.5rem 0;
         }
-
         .social-links a {
             width: 45px; height: 45px;
             background: rgba(255,255,255,0.1);
@@ -192,16 +200,15 @@
             text-decoration: none;
         }
 
-        .social-links a:hover { background: var(--warm-brown); transform: translateY(-3px); }
-
         @media (max-width: 768px) {
             .nav-links {
                 position: fixed; top: 70px; left: 0; right: 0;
                 background: var(--soft-white);
                 flex-direction: column;
                 padding: 2rem;
+                gap: 1.5rem;
                 transform: translateY(-150%);
-                transition: transform 0.3s;
+                transition: transform 0.3s ease;
             }
             .nav-links.active { transform: translateY(0); }
             .mobile-menu-btn { display: block; }
@@ -232,7 +239,29 @@
         </div>
     </section>
 
-    <!-- About, Products, Contact, Footer sections remain the same as last version -->
+    <!-- About -->
+    <section class="about" id="about">
+        <h2 class="section-title">About Us</h2>
+        <p class="section-subtitle">Growing with passion, nurturing with care</p>
+        <div class="about-placeholder">
+            <div class="icon" style="font-size: 3rem; margin-bottom: 1.5rem;">🌱</div>
+            <h3>About Me</h3>
+            <p>Coming Soon — Our story is being cultivated with care. Check back soon to learn more about Sage Morbeck and the vision behind Firmament Farms & Fungi.</p>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section class="products" id="products">
+        <h2 class="section-title">Our Products & Services</h2>
+        <p class="section-subtitle">Fresh from our farm to your table</p>
+        <div class="products-grid">
+            <div class="product-card"><div class="product-icon" style="font-size:2rem;margin:0 auto 1rem;">🍅</div><h3>Heirloom Produce</h3><p>Fresh, naturally-grown heirloom vegetables and fruits.</p></div>
+            <div class="product-card"><div class="product-icon" style="font-size:2rem;margin:0 auto 1rem;">🥚</div><h3>Free-Range Eggs</h3><p>Nutritious eggs from pasture-raised chickens.</p></div>
+            <div class="product-card"><div class="product-icon" style="font-size:2rem;margin:0 auto 1rem;">🌿</div><h3>Plants for Sale</h3><p>Healthy starter plants and seedlings.</p></div>
+            <div class="product-card"><div class="product-icon" style="font-size:2rem;margin:0 auto 1rem;">🌻</div><h3>Garden Consultation</h3><p>Expert advice for your home garden.</p></div>
+            <div class="product-card"><div class="product-icon" style="font-size:2rem;margin:0 auto 1rem;">🍄</div><h3>Fungi</h3><p>Gourmet and medicinal mushrooms.<br><span style="background:#C9A962;color:white;padding:4px 12px;border-radius:20px;font-size:0.85rem;">Coming Soon</span></p></div>
+        </div>
+    </section>
 
     <!-- Contact -->
     <section class="contact" id="contact">
@@ -242,21 +271,21 @@
             <div class="contact-info">
                 <h3>Contact Sage Morbeck</h3>
                 <div class="contact-item">
-                    <div>📞</div>
+                    <div style="font-size:1.4rem;">📞</div>
                     <div>
                         <h4>Phone</h4>
                         <a href="tel:+14046672839">(404) 667-2839</a>
                     </div>
                 </div>
                 <div class="contact-item">
-                    <div>✉️</div>
+                    <div style="font-size:1.4rem;">✉️</div>
                     <div>
                         <h4>Email</h4>
                         <a href="mailto:smorbeck@asu.edu">smorbeck@asu.edu</a>
                     </div>
                 </div>
                 <div class="contact-item">
-                    <div>📍</div>
+                    <div style="font-size:1.4rem;">📍</div>
                     <div>
                         <h4>Location</h4>
                         <span>Ball Ground, GA</span>
@@ -278,7 +307,7 @@
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <div class="footer-logo">Firmament Farms & Fungi</div>
+            <div class="footer-logo" style="font-size:1.5rem;font-weight:700;margin-bottom:0.5rem;">Firmament Farms & Fungi</div>
             <p>Heirloom, Naturally-Grown Produce</p>
             <div class="social-links">
                 <a href="https://www.facebook.com/share/193YhCDBCV/?mibextid=wwXIfr" target="_blank">f</a>
@@ -290,7 +319,6 @@
     </footer>
 
     <script>
-        // Navbar & Mobile Menu
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 50));
 
@@ -301,9 +329,8 @@
             mobileMenuBtn.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
         });
 
-        // Form
         document.getElementById('signupForm').addEventListener('submit', () => {
-            setTimeout(() => alert("Thank you! You've been subscribed 🌱"), 600);
+            setTimeout(() => alert("Thank you! You've been subscribed 🌱"), 500);
         });
     </script>
 </body>
