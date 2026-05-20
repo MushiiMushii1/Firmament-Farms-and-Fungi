@@ -114,7 +114,7 @@
             cursor: pointer;
         }
 
-        /* Hero - Improved sharpness */
+        /* Hero - Fixed blurriness */
         .hero {
             position: relative;
             height: 100vh;
@@ -127,7 +127,6 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            image-rendering: -webkit-optimize-contrast;
         }
 
         .hero-overlay {
@@ -151,8 +150,7 @@
             font-size: clamp(2.5rem, 6vw, 4.5rem);
             font-weight: 700;
             margin-bottom: 1rem;
-            color: var(--soft-white);
-            text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.4);
+            text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.45);
         }
 
         .hero .tagline {
@@ -178,7 +176,6 @@
         .hero-cta:hover {
             background: var(--dark-brown);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
         }
 
         /* Sections */
@@ -187,6 +184,15 @@
         .section-subtitle { text-align: center; color: var(--text-light); font-size: 1.1rem; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto; }
 
         .about { background: var(--cream); text-align: center; }
+
+        .about-placeholder {
+            background: var(--soft-white);
+            border: 3px dashed var(--beige);
+            border-radius: 20px;
+            padding: 4rem 2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
 
         .products { background: var(--soft-white); }
 
@@ -224,7 +230,7 @@
             font-size: 2rem;
         }
 
-        /* Contact Section - Improved for mobile */
+        /* Contact - Improved readability */
         .contact {
             background: linear-gradient(135deg, var(--forest-green), var(--deep-green));
             color: var(--soft-white);
@@ -242,25 +248,19 @@
             background: rgba(255, 255, 255, 0.12);
             backdrop-filter: blur(12px);
             border-radius: 20px;
-            padding: 2.5rem;
-        }
-
-        .contact-info h3 {
-            color: var(--soft-white);
-            margin-bottom: 1.8rem;
+            padding: 2.8rem;
         }
 
         .contact-item {
             display: flex;
             align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 1.6rem;
+            gap: 1.2rem;
+            margin-bottom: 1.8rem;
         }
 
         .contact-item a {
-            color: #e8e0d0 !important;
+            color: #f0e9d8 !important;
             text-decoration: none;
-            font-weight: 500;
         }
 
         .contact-item a:hover {
@@ -285,7 +285,6 @@
         .signup-form input:focus {
             outline: none;
             border-color: var(--forest-green);
-            background: var(--soft-white);
         }
 
         .signup-form button {
@@ -298,7 +297,7 @@
             font-weight: 600;
             width: 100%;
             cursor: pointer;
-            margin-top: 0.5rem;
+            margin-top: 1rem;
         }
 
         /* Footer */
@@ -335,7 +334,6 @@
             transform: translateY(-3px);
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .nav-links {
                 position: fixed;
@@ -352,4 +350,163 @@
             }
             .nav-links.active { transform: translateY(0); }
             .mobile-menu-btn { display: block; }
-            .hero { background-attachment: scroll
+            .hero { background-attachment: scroll; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <a href="#home" class="nav-logo">Firmament Farms & Fungi</a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">☰</button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Firmament Farms & Fungi</h1>
+            <p class="tagline">Heirloom, Naturally-Grown Produce</p>
+            <a href="#products" class="hero-cta">Explore Our Offerings</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2 class="section-title">About Us</h2>
+        <p class="section-subtitle">Growing with passion, nurturing with care</p>
+        <div class="about-placeholder">
+            <div class="icon">🌱</div>
+            <h3>About Me</h3>
+            <p>Coming Soon — Our story is being cultivated with care. Check back soon to learn more about Sage Morbeck and the vision behind Firmament Farms & Fungi.</p>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <h2 class="section-title">Our Products & Services</h2>
+        <p class="section-subtitle">Fresh from our farm to your table</p>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-icon">🍅</div>
+                <h3>Heirloom Produce</h3>
+                <p>Fresh, naturally-grown heirloom vegetables and fruits cultivated with organic practices and harvested at peak ripeness.</p>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">🥚</div>
+                <h3>Free-Range Eggs</h3>
+                <p>Nutritious eggs from happy, pasture-raised chickens that roam freely and enjoy a natural, stress-free life.</p>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">🌿</div>
+                <h3>Plants for Sale</h3>
+                <p>Healthy starter plants and seedlings for your home garden, grown with care and ready to thrive in your space.</p>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">🌻</div>
+                <h3>Garden Consultation</h3>
+                <p>Expert advice and personalized guidance for your home garden, from planning to planting and beyond.</p>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">🍄</div>
+                <h3>Fungi</h3>
+                <p>Gourmet and medicinal mushrooms cultivated with care. A new chapter in our farming journey.</p>
+                <span class="coming-soon-badge">Coming Soon</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">We'd love to hear from you</p>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Contact Sage Morbeck</h3>
+                <div class="contact-item">
+                    <div class="contact-item-icon">📞</div>
+                    <div class="contact-item-text">
+                        <h4>Phone</h4>
+                        <a href="tel:+14046672839">(404) 667-2839</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-item-icon">✉️</div>
+                    <div class="contact-item-text">
+                        <h4>Email</h4>
+                        <a href="mailto:smorbeck@asu.edu">smorbeck@asu.edu</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-item-icon">📍</div>
+                    <div class="contact-item-text">
+                        <h4>Location</h4>
+                        <span>Ball Ground, GA</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="signup-form">
+                <h3>Join Our Community</h3>
+                <p>Stay updated with seasonal offerings, farm news, and special updates.</p>
+                <form id="signupForm" action="https://formspree.io/f/xdajeoze" method="POST">
+                    <input type="email" name="email" placeholder="Enter your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Firmament Farms & Fungi</div>
+            <p>Heirloom, Naturally-Grown Produce</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/share/193YhCDBCV/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">f</a>
+                <a href="https://www.instagram.com/firmamentfarmsandfungi?igsh=MWRrbGhmcXVidTlwOA==" target="_blank" aria-label="Instagram">ig</a>
+                <a href="#" target="_blank" aria-label="Twitter">t</a>
+            </div>
+            <div class="copyright">
+                &copy; 2024 Firmament Farms & Fungi. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.textContent = '☰';
+            });
+        });
+
+        // Form confirmation
+        document.getElementById('signupForm').addEventListener('submit', function() {
+            setTimeout(() => {
+                alert("Thank you! You've been subscribed 🌱");
+            }, 600);
+        });
+    </script>
+</body>
+</html>
