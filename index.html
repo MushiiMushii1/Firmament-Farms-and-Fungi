@@ -114,7 +114,7 @@
             cursor: pointer;
         }
 
-        /* Hero Section */
+        /* Hero - Improved sharpness */
         .hero {
             position: relative;
             height: 100vh;
@@ -127,6 +127,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
+            image-rendering: -webkit-optimize-contrast;
         }
 
         .hero-overlay {
@@ -135,7 +136,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, rgba(45, 74, 62, 0.75) 0%, rgba(26, 47, 38, 0.65) 50%, rgba(92, 74, 50, 0.55) 100%);
+            background: linear-gradient(135deg, rgba(45, 74, 62, 0.78) 0%, rgba(26, 47, 38, 0.68) 50%, rgba(92, 74, 50, 0.58) 100%);
         }
 
         .hero-content {
@@ -151,7 +152,7 @@
             font-weight: 700;
             margin-bottom: 1rem;
             color: var(--soft-white);
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.4);
         }
 
         .hero .tagline {
@@ -180,53 +181,14 @@
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
         }
 
-        /* Section Styles */
-        section {
-            padding: 5rem 5%;
-        }
+        /* Sections */
+        section { padding: 5rem 5%; }
+        .section-title { text-align: center; font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; color: var(--forest-green); }
+        .section-subtitle { text-align: center; color: var(--text-light); font-size: 1.1rem; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto; }
 
-        .section-title {
-            text-align: center;
-            font-size: clamp(2rem, 4vw, 3rem);
-            margin-bottom: 1rem;
-            color: var(--forest-green);
-        }
+        .about { background: var(--cream); text-align: center; }
 
-        .section-subtitle {
-            text-align: center;
-            color: var(--text-light);
-            font-size: 1.1rem;
-            margin-bottom: 3rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* About */
-        .about {
-            background: var(--cream);
-            text-align: center;
-        }
-
-        .about-placeholder {
-            background: var(--soft-white);
-            border: 3px dashed var(--beige);
-            border-radius: 20px;
-            padding: 4rem 2rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .about-placeholder h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: var(--warm-brown);
-        }
-
-        /* Products */
-        .products {
-            background: var(--soft-white);
-        }
+        .products { background: var(--soft-white); }
 
         .products-grid {
             display: grid;
@@ -243,8 +205,6 @@
             text-align: center;
             transition: all 0.4s ease;
             border: 1px solid var(--beige);
-            position: relative;
-            overflow: hidden;
         }
 
         .product-card:hover {
@@ -262,31 +222,9 @@
             justify-content: center;
             margin: 0 auto 1.5rem;
             font-size: 2rem;
-            transition: transform 0.3s ease;
         }
 
-        .product-card:hover .product-icon {
-            transform: scale(1.1) rotate(5deg);
-        }
-
-        .coming-soon-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--accent-gold), var(--warm-brown));
-            color: var(--soft-white);
-            padding: 0.5rem 1.5rem;
-            border-radius: 25px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-top: 1rem;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
-        }
-
-        /* Contact */
+        /* Contact Section - Improved for mobile */
         .contact {
             background: linear-gradient(135deg, var(--forest-green), var(--deep-green));
             color: var(--soft-white);
@@ -301,10 +239,32 @@
         }
 
         .contact-info {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(12px);
             border-radius: 20px;
             padding: 2.5rem;
+        }
+
+        .contact-info h3 {
+            color: var(--soft-white);
+            margin-bottom: 1.8rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.6rem;
+        }
+
+        .contact-item a {
+            color: #e8e0d0 !important;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent-gold) !important;
         }
 
         .signup-form {
@@ -319,7 +279,6 @@
             border-radius: 10px;
             font-size: 1rem;
             width: 100%;
-            font-family: 'Lato', sans-serif;
             background: var(--cream);
         }
 
@@ -339,12 +298,7 @@
             font-weight: 600;
             width: 100%;
             cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .signup-form button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(45, 74, 62, 0.3);
+            margin-top: 0.5rem;
         }
 
         /* Footer */
@@ -372,7 +326,7 @@
             justify-content: center;
             color: var(--cream);
             text-decoration: none;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             transition: all 0.3s ease;
         }
 
@@ -396,171 +350,6 @@
                 transform: translateY(-150%);
                 transition: transform 0.3s ease;
             }
-            .nav-links.active {
-                transform: translateY(0);
-            }
-            .mobile-menu-btn {
-                display: block;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- Navigation -->
-    <nav id="navbar">
-        <a href="#home" class="nav-logo">Firmament Farms & Fungi</a>
-        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">☰</button>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#products">Products</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>Firmament Farms & Fungi</h1>
-            <p class="tagline">Heirloom, Naturally-Grown Produce</p>
-            <a href="#products" class="hero-cta">Explore Our Offerings</a>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <h2 class="section-title">About Us</h2>
-        <p class="section-subtitle">Growing with passion, nurturing with care</p>
-        <div class="about-placeholder">
-            <div class="icon">🌱</div>
-            <h3>About Me</h3>
-            <p>Coming Soon — Our story is being cultivated with care. Check back soon to learn more about Sage Morbeck and the vision behind Firmament Farms & Fungi.</p>
-        </div>
-    </section>
-
-    <!-- Products Section -->
-    <section class="products" id="products">
-        <h2 class="section-title">Our Products & Services</h2>
-        <p class="section-subtitle">Fresh from our farm to your table</p>
-        <div class="products-grid">
-            <div class="product-card">
-                <div class="product-icon">🍅</div>
-                <h3>Heirloom Produce</h3>
-                <p>Fresh, naturally-grown heirloom vegetables and fruits cultivated with organic practices and harvested at peak ripeness.</p>
-            </div>
-            <div class="product-card">
-                <div class="product-icon">🥚</div>
-                <h3>Free-Range Eggs</h3>
-                <p>Nutritious eggs from happy, pasture-raised chickens that roam freely and enjoy a natural, stress-free life.</p>
-            </div>
-            <div class="product-card">
-                <div class="product-icon">🌿</div>
-                <h3>Plants for Sale</h3>
-                <p>Healthy starter plants and seedlings for your home garden, grown with care and ready to thrive in your space.</p>
-            </div>
-            <div class="product-card">
-                <div class="product-icon">🌻</div>
-                <h3>Garden Consultation</h3>
-                <p>Expert advice and personalized guidance for your home garden, from planning to planting and beyond.</p>
-            </div>
-            <div class="product-card">
-                <div class="product-icon">🍄</div>
-                <h3>Fungi</h3>
-                <p>Gourmet and medicinal mushrooms cultivated with care. A new chapter in our farming journey.</p>
-                <span class="coming-soon-badge">Coming Soon</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <h2 class="section-title">Get In Touch</h2>
-        <p class="section-subtitle">We'd love to hear from you</p>
-        <div class="contact-container">
-            <div class="contact-info">
-                <h3>Contact Sage Morbeck</h3>
-                <div class="contact-item">
-                    <div class="contact-item-icon">📞</div>
-                    <div class="contact-item-text">
-                        <h4>Phone</h4>
-                        <a href="tel:+14046672839">(404) 667-2839</a>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-item-icon">✉️</div>
-                    <div class="contact-item-text">
-                        <h4>Email</h4>
-                        <a href="mailto:smorbeck@asu.edu">smorbeck@asu.edu</a>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-item-icon">📍</div>
-                    <div class="contact-item-text">
-                        <h4>Location</h4>
-                        <span>Ball Ground, GA</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="signup-form">
-                <h3>Join Our Community</h3>
-                <p>Stay updated with seasonal offerings, farm news, and special updates.</p>
-                <form id="signupForm" action="https://formspree.io/f/xdajeoze" method="POST">
-                    <input type="email" name="email" placeholder="Enter your email address" required>
-                    <button type="submit">Subscribe</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-logo">Firmament Farms & Fungi</div>
-            <p>Heirloom, Naturally-Grown Produce</p>
-            <div class="social-links">
-                <a href="https://www.facebook.com/share/193YhCDBCV/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">f</a>
-                <a href="https://www.instagram.com/firmamentfarmsandfungi?igsh=MWRrbGhmcXVidTlwOA==" target="_blank" aria-label="Instagram">ig</a>
-                <a href="#" target="_blank" aria-label="Twitter">t</a>
-            </div>
-            <div class="copyright">
-                &copy; 2024 Firmament Farms & Fungi. All rights reserved.
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.getElementById('navLinks');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileMenuBtn.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
-        });
-
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                mobileMenuBtn.textContent = '☰';
-            });
-        });
-
-        // Form success message
-        document.getElementById('signupForm').addEventListener('submit', function() {
-            setTimeout(() => {
-                alert("Thank you! You've been subscribed 🌱 We'll keep you updated with farm news.");
-            }, 500);
-        });
-    </script>
-</body>
-</html>
+            .nav-links.active { transform: translateY(0); }
+            .mobile-menu-btn { display: block; }
+            .hero { background-attachment: scroll
